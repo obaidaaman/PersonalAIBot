@@ -7,5 +7,5 @@ langchain-google-genai>=3.0.0
 langchain-google-vertexai>=3.0.1
 langchain-openai>=1.0.1
 langchain-tavily>=0.2.12
-langgraph>=1.0.2,
+langgraph>=1.0.2
 python-dotenv>=1.2.1
