@@ -1,7 +1,6 @@
 
 
 from langchain.tools import tool
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools import TavilySearchResults
 from langchain_tavily import TavilySearch
 from langchain.agents.middleware import SummarizationMiddleware
@@ -47,8 +46,6 @@ def retrieve_context(query: str, n_results: int = 3) -> str:
         return f"Error accessing ChromaDB collection: {e}"
     
 
-
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0)
 
 tools = [retrieve_context, search_tool]
 
