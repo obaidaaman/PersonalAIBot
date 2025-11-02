@@ -25,7 +25,3 @@ def query_agent_endpoint(request: ChatModel):
     response = query_rag_agent(request.query, thread_id=request.thread_id)
     return {"response": response["messages"][-1].content}
    
-import uvicorn  
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
-            
