@@ -19,7 +19,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET","HEAD"], summary="Health Check", description="Endpoint to check if the API is running.")
 def health_check():
     """Keep-alive endpoint for cron jobs"""
     return {"status": "active"}
