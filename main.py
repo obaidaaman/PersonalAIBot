@@ -19,6 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/health")
+def health_check():
+    """Keep-alive endpoint for cron jobs"""
+    return {"status": "active"}
+
 @app.post("/query", summary="Query the RAG Agent", description="Send a question to the RAG agent and receive a response.")
 def query_agent_endpoint(request: ChatModel):
     """API endpoint to query the RAG agent."""
